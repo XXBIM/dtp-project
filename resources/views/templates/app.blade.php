@@ -19,7 +19,7 @@
   </head>
   <body >
     <div class="wrapper">
-    @include('templates.partials.sidebar')
+    @include('templates.partials.sidebar  ')
       <div class="page-wrapper">
         <div class="container-xl">
           <!-- Page title -->
