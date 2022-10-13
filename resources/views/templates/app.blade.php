@@ -15,7 +15,6 @@
     <title>Dashboard - Tabler - Premium and Open Source dashboard template with responsive and high quality UI.</title>
     <!-- CSS files -->
     @include('templates.partials.styles')
-    
   </head>
   <body >
     <div class="wrapper">
