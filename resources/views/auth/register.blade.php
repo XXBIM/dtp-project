@@ -28,6 +28,8 @@
         </div>
         <form class="card card-md" action="." method="get">
           <div class="card-body">
+           <form method="POST" action="{{ route('register') }}">
+            @csrf
             <h2 class="card-title text-center mb-4">Create new account</h2>
             <div class="mb-3">
               <label class="form-label">Name</label>
