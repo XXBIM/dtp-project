@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use PhpParser\Node\Scalar\MagicConst\Function_;
 
 class StudentController extends Controller
 {
@@ -12,11 +13,6 @@ class StudentController extends Controller
         return view ('student.index', [
             'students' => Student::get(),
         ]);
-    }
-    public function edit()
-    {
-        return view ('student.index'
-        );
     }
     public function create()
     {
@@ -35,6 +31,33 @@ class StudentController extends Controller
 
         return back();
     }
-
     
+    public function edit($id)
+    {
+       $students = Student::find($id);
+
+        return view('student.edit', [
+            'student' => $students,
+        ]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $students = Student::find($id); 
+        $students->name = $request->name;
+        $students->address = $request->address;
+        $students->phone_number = $request->phone_number;
+        $students->class = $request->class;
+
+        $students->save();
+
+        return back();
+    }
+
+    public function delete($id)
+    {
+        $students = Student::find($id);
+        $students->delete();
+        return back();
+    }
 }
