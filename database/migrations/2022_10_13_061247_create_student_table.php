@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('phone_number', 15);
             $table->string('address');
             $table->string('class');
+            $table->string('namakelas');
             $table->timestamps();
         });
     }

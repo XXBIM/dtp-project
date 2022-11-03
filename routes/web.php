@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +34,9 @@ Route::get('students/{id}/edit', [StudentController::class, 'edit'])->name('stud
 Route::put('students/{id}', [StudentController::class, 'update'])->name('student.update');
 
 Route::get('students/delete/{id}', [StudentController::class, 'delete'])->name('student.delete');
+
+Route::get('/kelas', [ClassController::class, 'index'])->name('kelas.index');
+
 
 
 
